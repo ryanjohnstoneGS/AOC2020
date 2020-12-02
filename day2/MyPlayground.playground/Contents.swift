@@ -4,6 +4,7 @@ let fileURL = Bundle.main.url(forResource: "input", withExtension: "txt")
 let content = try String(contentsOf: fileURL!, encoding: String.Encoding.utf8)
 
 var validCount = 0
+var validPt2 = 0
 for line in content.components(separatedBy: "\n") {
     print(line)
     if line.count == 0 { break }
@@ -18,10 +19,6 @@ for line in content.components(separatedBy: "\n") {
     let max = Int(range.components(separatedBy: "-")[1])!
 
     if min > 0 {
-        if !password.contains(character) {
-            continue
-        }
-
         var occurenceCount = 0
         for char in password {
             if char == character {
@@ -33,6 +30,15 @@ for line in content.components(separatedBy: "\n") {
             validCount += 1
         }
     }
+
+    let minIndex = password.index(password.startIndex, offsetBy: min-1)
+    let maxIndex = password.index(password.startIndex, offsetBy: max-1)
+
+    if password[minIndex] == character && password[maxIndex] != character {
+        validPt2 += 1
+    } else if password[minIndex] != character && password[maxIndex] == character {
+        validPt2 += 1
+    }
 }
 
-print(validCount)
+print(validPt2)
