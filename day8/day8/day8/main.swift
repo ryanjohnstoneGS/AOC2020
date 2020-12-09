@@ -7,92 +7,7 @@
 
 import Foundation
 
-import Cocoa
-
-let lines = content.components(separatedBy: .newlines)
-
-var accumulator = 0
-var visitedIndexes: [Int] = []
-var index = 0
-
-func solveA() {
-    print("ACC = \(search(lines: lines).acc!)")
-}
-
-//solveA()
-
-func solveB() {
-    var mutableLines = lines
-
-    for i in 0...lines.count - 1 {
-        let split = lines[i].split(separator: " ")
-        let instruction = Instruction(rawValue: String(split[0]))
-        let lineToReplace = lines[i]
-
-        switch instruction {
-        case .acc:
-          continue
-        case .jmp:
-            mutableLines[i] = lineToReplace.replacingOccurrences(of: "jmp", with: "nop")
-        case .nop:
-            mutableLines[i] = lineToReplace.replacingOccurrences(of: "nop", with: "jmp")
-        case .none:
-            print("error")
-        }
-
-        let (acc, error) = search(lines: mutableLines)
-        if error == nil {
-            print("Part 2: \(acc!)")
-            break
-        } else {
-            mutableLines[i] = lineToReplace
-        }
-    }
-}
-
-func search(lines: [String]) -> (acc: Int?, err: String?) {
-    var index = 0
-    var accumulator = 0
-    var visitedIndexes: [Int] = []
-
-    while !visitedIndexes.contains(index) {
-        let line = lines[index]
-        visitedIndexes.append(index)
-
-        let split = line.split(separator: " ")
-        let instruction = Instruction(rawValue: String(split[0]))
-        let num = Int(split[1])!
-
-        switch instruction {
-        case .acc:
-            accumulator += num
-            index += 1
-        case .jmp:
-            index += num
-        case .nop:
-            index += 1
-        case .none:
-            print("error")
-        }
-
-        if index >= lines.count {
-            print("Terminated! - ACC = \(accumulator)")
-            return (accumulator, nil)
-        }
-    }
-
-    return (accumulator, "Error")
-}
-
-solveB()
-
-enum Instruction: String {
-    case acc
-    case jmp
-    case nop
-}
-
-let content = """
+fileprivate let content = """
 acc +48
 nop +308
 acc +33
@@ -720,3 +635,84 @@ nop -397
 acc +29
 jmp +1
 """
+
+func solveA() {
+    let lines = content.components(separatedBy: .newlines)
+    let acc = search(lines: lines).acc!
+    print("Solve A = \(acc)")
+}
+
+func solveB() {
+    let lines = content.components(separatedBy: .newlines)
+    var mutableLines = lines
+
+    for i in 0...lines.count - 1 {
+        let split = lines[i].split(separator: " ")
+        let instruction = Instruction(rawValue: String(split[0]))
+        let lineToReplace = lines[i]
+
+        switch instruction {
+        case .acc:
+          continue
+        case .jmp:
+            mutableLines[i] = lineToReplace.replacingOccurrences(of: "jmp", with: "nop")
+        case .nop:
+            mutableLines[i] = lineToReplace.replacingOccurrences(of: "nop", with: "jmp")
+        case .none:
+            print("error")
+        }
+
+        let (acc, error) = search(lines: mutableLines)
+        if error == nil {
+            print("Part 2: \(acc!)")
+            break
+        } else {
+            mutableLines[i] = lineToReplace
+        }
+    }
+}
+
+func search(lines: [String]) -> (acc: Int?, err: String?) {
+    var index = 0
+    var accumulator = 0
+    var visitedIndexes: [Int] = []
+
+    while !visitedIndexes.contains(index) {
+        let line = lines[index]
+        visitedIndexes.append(index)
+
+        let split = line.split(separator: " ")
+        let instruction = Instruction(rawValue: String(split[0]))
+        let num = Int(split[1])!
+
+        switch instruction {
+        case .acc:
+            accumulator += num
+            index += 1
+        case .jmp:
+            index += num
+        case .nop:
+            index += 1
+        case .none:
+            print("error")
+        }
+
+        if index >= lines.count {
+            print("Terminated! - ACC = \(accumulator)")
+            return (accumulator, nil)
+        }
+    }
+
+    return (accumulator, "Error")
+}
+
+enum Instruction: String {
+    case acc
+    case jmp
+    case nop
+}
+
+solveA()
+solveB()
+
+
