@@ -1,6 +1,6 @@
 //
 //  main.swift
-//  day8
+//  
 //
 //  Created by Ryan Johnstone on 09/12/2020.
 //

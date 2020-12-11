@@ -26,7 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3F9A9D9525813E9400928457 /* day8 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = day8; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F9A9D9525813E9400928457 /* AOC2020 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AOC2020; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9A9D9825813E9400928457 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3F9A9DA0258145B800928457 /* day9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day9.swift; sourceTree = "<group>"; };
 		3F9A9DA3258145C200928457 /* day8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day8.swift; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 		3F9A9D8C25813E9400928457 = {
 			isa = PBXGroup;
 			children = (
-				3F9A9D9725813E9400928457 /* day8 */,
+				3F9A9D9725813E9400928457 /* AOC2020 */,
 				3F9A9D9625813E9400928457 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,12 +55,12 @@
 		3F9A9D9625813E9400928457 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F9A9D9525813E9400928457 /* day8 */,
+				3F9A9D9525813E9400928457 /* AOC2020 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3F9A9D9725813E9400928457 /* day8 */ = {
+		3F9A9D9725813E9400928457 /* AOC2020 */ = {
 			isa = PBXGroup;
 			children = (
 				3F9A9D9825813E9400928457 /* main.swift */,
@@ -68,15 +68,15 @@
 				3F9A9DA3258145C200928457 /* day8.swift */,
 				3F9A9DA82582592800928457 /* day10.swift */,
 			);
-			path = day8;
+			path = AOC2020;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3F9A9D9425813E9400928457 /* day8 */ = {
+		3F9A9D9425813E9400928457 /* AOC2020 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F9A9D9C25813E9400928457 /* Build configuration list for PBXNativeTarget "day8" */;
+			buildConfigurationList = 3F9A9D9C25813E9400928457 /* Build configuration list for PBXNativeTarget "AOC2020" */;
 			buildPhases = (
 				3F9A9D9125813E9400928457 /* Sources */,
 				3F9A9D9225813E9400928457 /* Frameworks */,
@@ -86,9 +86,9 @@
 			);
 			dependencies = (
 			);
-			name = day8;
+			name = AOC2020;
 			productName = day8;
-			productReference = 3F9A9D9525813E9400928457 /* day8 */;
+			productReference = 3F9A9D9525813E9400928457 /* AOC2020 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +105,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3F9A9D9025813E9400928457 /* Build configuration list for PBXProject "day8" */;
+			buildConfigurationList = 3F9A9D9025813E9400928457 /* Build configuration list for PBXProject "AOC2020" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,7 +118,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3F9A9D9425813E9400928457 /* day8 */,
+				3F9A9D9425813E9400928457 /* AOC2020 */,
 			);
 		};
 /* End PBXProject section */
@@ -278,7 +278,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F9A9D9025813E9400928457 /* Build configuration list for PBXProject "day8" */ = {
+		3F9A9D9025813E9400928457 /* Build configuration list for PBXProject "AOC2020" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F9A9D9A25813E9400928457 /* Debug */,
@@ -287,7 +287,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F9A9D9C25813E9400928457 /* Build configuration list for PBXNativeTarget "day8" */ = {
+		3F9A9D9C25813E9400928457 /* Build configuration list for PBXNativeTarget "AOC2020" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F9A9D9D25813E9400928457 /* Debug */,
